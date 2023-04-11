@@ -1,0 +1,15 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Ler arquivo CSV com dados do PIB brasileiro
+df = pd.read_csv('pib_brasil.csv', index_col='Ano')
+
+# Selecionar dados entre 1997 e 2021
+df = df.loc[1997:2021]
+
+# Plotar gráfico de linha para visualizar o avanço do PIB ao longo do tempo
+plt.plot(df.index, df['PIB'])
+plt.xlabel('Ano')
+plt.ylabel('PIB (em trilhões de reais)')
+plt.title('Avanço do PIB brasileiro entre 1997 e 2021')
+plt.show()
